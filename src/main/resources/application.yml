@@ -1,13 +1,29 @@
 spring:
   application:
     name:project
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/job-portal
+#    username: root
+#    password: 123456789
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  # Hibernate Dialect for MySQL
+#  jpa:
+#    hibernate:
+#      ddl-auto: update  # This can be 'create', 'update', 'validate', or 'none'
+#    show-sql: true  # Whether to log SQL queries to the console
+#    database:
+#      platform: org.hibernate.dialect.MySQL8Dialect  # Dialect for MySQL
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/job-portal
-    username: root
+    url: jdbc:postgresql://localhost:5432/jobapp
+    username: uthej
     password: 123456789
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    datasource: POSTGRESQL
+    show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+
   #Actuator
 management:
   endpoints:
